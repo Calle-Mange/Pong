@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://gl0obwfyd0yi"]
+
+[ext_resource type="PackedScene" uid="uid://byn5e1kpc5es1" path="res://Scenes/field.tscn" id="1_hsido"]
+[ext_resource type="PackedScene" uid="uid://yp2xpp4mxdpf" path="res://Scenes/pong.tscn" id="2_ik58s"]
+[ext_resource type="PackedScene" uid="uid://iy2878ya88l" path="res://Scenes/ponger.tscn" id="3_e2j6a"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="field" parent="." instance=ExtResource("1_hsido")]
+
+[node name="Pong" parent="field" instance=ExtResource("2_ik58s")]
+
+[node name="Ponger" parent="field" instance=ExtResource("3_e2j6a")]
+position = Vector2(-300, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]

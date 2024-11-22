@@ -45,3 +45,4 @@ player_two_down={
 
 2d_physics/layer_1="Pongers"
 2d_physics/layer_2="Pong"
+2d_physics/layer_3="Walls"
