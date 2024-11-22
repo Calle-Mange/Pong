@@ -8,9 +8,9 @@
 
 [node name="field" parent="." instance=ExtResource("1_hsido")]
 
-[node name="Pong" parent="field" instance=ExtResource("2_ik58s")]
+[node name="Pong" parent="." instance=ExtResource("2_ik58s")]
 
-[node name="Ponger" parent="field" instance=ExtResource("3_e2j6a")]
+[node name="Ponger" parent="." instance=ExtResource("3_e2j6a")]
 position = Vector2(-300, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://byn5e1kpc5es1"]
+[gd_scene load_steps=8 format=3 uid="uid://byn5e1kpc5es1"]
 
+[ext_resource type="Script" path="res://Scripts/wall_collision_handler.cs" id="1_nyur3"]
 [ext_resource type="Texture2D" uid="uid://g7cqby8lvegm" path="res://Assets/pong_roof.png" id="1_wvnr0"]
 [ext_resource type="Texture2D" uid="uid://sg73xxvhypa8" path="res://Assets/pong_wall.png" id="2_6rbp4"]
 
@@ -17,10 +18,11 @@ size = Vector2(8, 640)
 
 [node name="field" type="Node2D"]
 
-[node name="roof" type="Area2D" parent="."]
+[node name="roof" type="StaticBody2D" parent="."]
 position = Vector2(0, -316)
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_nyur3")
 
 [node name="Sprite2D" type="Sprite2D" parent="roof"]
 texture = ExtResource("1_wvnr0")
@@ -30,10 +32,11 @@ position = Vector2(-5.60284e-06, 0)
 scale = Vector2(1.00443, 1)
 shape = SubResource("RectangleShape2D_5j71h")
 
-[node name="floor" type="Area2D" parent="."]
+[node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(0, 316)
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_nyur3")
 
 [node name="Sprite2D" type="Sprite2D" parent="floor"]
 texture = ExtResource("1_wvnr0")
@@ -41,10 +44,11 @@ texture = ExtResource("1_wvnr0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 shape = SubResource("RectangleShape2D_6wadc")
 
-[node name="right_wall" type="Area2D" parent="."]
+[node name="right_wall" type="StaticBody2D" parent="."]
 position = Vector2(316, 0)
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_nyur3")
 
 [node name="Sprite2D" type="Sprite2D" parent="right_wall"]
 texture = ExtResource("2_6rbp4")
@@ -52,10 +56,11 @@ texture = ExtResource("2_6rbp4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_wall"]
 shape = SubResource("RectangleShape2D_l120u")
 
-[node name="left_wall" type="Area2D" parent="."]
+[node name="left_wall" type="StaticBody2D" parent="."]
 position = Vector2(-316, 0)
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_nyur3")
 
 [node name="Sprite2D" type="Sprite2D" parent="left_wall"]
 texture = ExtResource("2_6rbp4")

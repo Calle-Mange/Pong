@@ -3,7 +3,7 @@ using System;
 
 public partial class pong_movement : CharacterBody2D
 {
-	public const float Speed = 150.0f;
+	public const float Speed = 300.0f;
 
 	protected Vector2 Direction;
 
@@ -16,10 +16,16 @@ public partial class pong_movement : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 
-		velocity = Direction * Speed;
+		if (GetLastSlideCollision() != null)
+		{
+			Direction = Direction.Bounce(GetLastSlideCollision().GetNormal()).Normalized();
+		}
 
-		Velocity = velocity;
-		MoveAndSlide();
+        velocity = Direction * Speed;
+
+        Velocity = velocity;
+
+        MoveAndSlide();
 	}
 
 	public void StartMovement()
@@ -48,6 +54,6 @@ public partial class pong_movement : CharacterBody2D
 
 	public void ChangeDirection()
 	{
-
+		
 	}
 }
